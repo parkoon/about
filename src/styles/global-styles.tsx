@@ -9,8 +9,10 @@ const defaultStyle = css`
   }
 
   body {
-    font-family: Pretendard, Arial, Helvetica, sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
     font-size: 16px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.8);
   }
 
   button {
