@@ -1,20 +1,17 @@
-import { useState } from "react";
-import Layout from "@/components/Layout";
-import styled from "@emotion/styled";
-import Section from "@/components/Section";
-import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
-import LastUpdatedAt from "./components/LastUpdatedAt";
-import DashedDivider from "./components/DashedDivider";
+import Layout from "@/components/Layout";
 import AboutMe from "./components/AboutMe";
+import LastUpdatedAt from "./components/LastUpdatedAt";
 
-import { PROFILE, ABOUT_ME, EXPERIENCE, SIDE_PROJECT } from "@/resume";
+import {
+  ABOUT_ME,
+  EXPERIENCE,
+  LAST_UPDATED_AT,
+  PROFILE,
+  SIDE_PROJECT,
+} from "@/resume";
 import Profile from "./components/Profile";
 import SideProject from "./components/SideProject";
-
-const Box = styled.div`
-  height: 200px;
-`;
 
 function App() {
   return (
@@ -24,8 +21,8 @@ function App() {
         <AboutMe key={index} title={title} items={items} />
       ))}
       <Experience items={EXPERIENCE} />
-
       <SideProject items={SIDE_PROJECT} />
+      <LastUpdatedAt at={LAST_UPDATED_AT} />
     </Layout>
   );
 }

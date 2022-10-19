@@ -13,7 +13,7 @@ type Props = {
 };
 function Profile({ name, link }: Props) {
   return (
-    <Section title={name} style={{ marginBottom: 32 }}>
+    <Section title={name} mb={32}>
       <Contact
         items={[
           { label: "GitHub", link: link.github },

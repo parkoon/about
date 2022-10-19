@@ -9,9 +9,9 @@ type Props = {
 };
 function SideProject({ items }: Props) {
   return (
-    <Section title="Side Project" style={{ marginTop: 87 }}>
-      {items.map(({ title, descriptions }, index) => (
-        <Description key={index} title={title}>
+    <Section title="Side Project" mt={87}>
+      {items.map(({ title, descriptions, link }, index) => (
+        <Description key={index} title={title} link={link}>
           <List items={descriptions} />
         </Description>
       ))}

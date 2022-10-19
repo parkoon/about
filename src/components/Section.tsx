@@ -3,19 +3,22 @@ import React from "react";
 
 const Wrapper = styled.section``;
 const Title = styled.h3`
+  display: inline-block;
   position: relative;
   font-size: 38px;
   font-weight: 600;
 
-  margin-bottom: 34px;
+  margin-bottom: 24px;
 
   &::after {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: -17px;
-    width: 52px;
-    height: 5px;
+    right: -17px;
+    bottom: 0;
+
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
     background-color: ${(props) => props.theme.colors.primary};
   }
 `;
@@ -26,10 +29,12 @@ type Props = {
   title?: string;
   children: React.ReactNode;
   style?: React.CSSProperties;
+  mb?: number;
+  mt?: number;
 };
-function Section({ title, children, style }: Props) {
+function Section({ title, children, mt, mb, style }: Props) {
   return (
-    <Wrapper style={style}>
+    <Wrapper style={{ marginTop: mt, marginBottom: mb, ...style }}>
       <Title>{title}</Title>
       <Content>{children}</Content>
     </Wrapper>

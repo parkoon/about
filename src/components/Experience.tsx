@@ -25,6 +25,16 @@ const Title = styled.h3`
   margin-bottom: 12px;
 `;
 
+const LinkTitle = styled.a`
+  display: block;
+  font-size: 32px;
+  font-weight: 400;
+
+  margin-bottom: 12px;
+
+  color: ${(props) => props.theme.colors.link};
+`;
+
 const Left = styled.div`
   margin-right: 12px;
 
@@ -42,12 +52,11 @@ const Right = styled.div`
 const Date = styled.div`
   font-style: italic;
   margin-bottom: 27px;
+  color: rgba(0, 0, 0, 0.6);
 `;
 
-const Row = styled.div`
-  &:not(:last-of-type) {
-    margin-bottom: 18px;
-  }
+const Position = styled.div`
+  margin-bottom: 4px;
 `;
 
 const Divider = styled.div`
@@ -63,12 +72,12 @@ type Props = {
 };
 function Experience({ items }: Props) {
   return (
-    <Section title="Experience" style={{ marginTop: 87 }}>
+    <Section title="Experience" mt={87}>
       {items.map(({ corp, from, to, features, position }, index) => (
         <Wrapper key={index}>
           <Left>
             <Title>{corp}</Title>
-            <span>{position}</span>
+            <Position>{position}</Position>
             <div>
               {from} - {to || "현재"}
             </div>
@@ -77,7 +86,13 @@ function Experience({ items }: Props) {
             {features.map((feature, index) => (
               <>
                 <div key={index}>
-                  <Title>{feature.title}</Title>
+                  {feature.link ? (
+                    <LinkTitle target="_blank" href={feature.link}>
+                      {feature.title}
+                    </LinkTitle>
+                  ) : (
+                    <Title>{feature.title}</Title>
+                  )}
                   <Date>
                     {feature.from} - {feature.to || "현재"}
                   </Date>

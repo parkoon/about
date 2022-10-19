@@ -8,7 +8,7 @@ const Wrapper = styled.ul`
 const Item = styled.li`
   position: relative;
   &:not(:last-of-type) {
-    margin-bottom: 4px;
+    margin-bottom: 7px;
   }
 `;
 
