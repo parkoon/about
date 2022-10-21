@@ -10,10 +10,7 @@ const Link = styled.a`
   text-decoration: underline;
 `;
 
-type Props = {
-  items: SideProjectModel[];
-};
-function SideProject({ items }: Props) {
+function SideProject() {
   return (
     <Section title="Side Project" mt={87}>
       <List

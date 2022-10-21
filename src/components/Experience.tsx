@@ -24,10 +24,16 @@ const Title = styled.h3`
 
   margin-bottom: 12px;
 `;
+const FeatureTitle = styled.h4`
+  font-size: 28px;
+  font-weight: 400;
+
+  margin-bottom: 12px;
+`;
 
 const LinkTitle = styled.a`
   display: inline-block;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 400;
 
   margin-bottom: 12px;
@@ -92,7 +98,7 @@ function Experience({ items }: Props) {
                       {feature.title}
                     </LinkTitle>
                   ) : (
-                    <Title>{feature.title}</Title>
+                    <FeatureTitle>{feature.title}</FeatureTitle>
                   )}
                   <Date>
                     {feature.from} - {feature.to || "현재"}

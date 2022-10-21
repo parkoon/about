@@ -21,7 +21,7 @@ function App() {
         <AboutMe key={index} {...item} />
       ))}
       <Experience items={EXPERIENCE} />
-      <SideProject items={SIDE_PROJECT} />
+      <SideProject />
       <LastUpdatedAt at={LAST_UPDATED_AT} />
     </Layout>
   );

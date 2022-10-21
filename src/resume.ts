@@ -35,6 +35,69 @@ export const ABOUT_ME = [
 
 export const EXPERIENCE = [
   {
+    corp: "한국신용데이터",
+    position: "Frontend Developer",
+    from: "2021.6",
+    to: "",
+    features: [
+      {
+        title: "캐시노트 마켓",
+        description: "소상공인에게 상품을 공급하는 플랫폼",
+        link: "",
+        from: "2021.9",
+        to: "",
+        tasks: [
+          "프로젝트 설계부터 개발 및 배포까지 참여",
+          "상품 탐색부터 장바구니, 결제까지의 퍼널 작업",
+        ],
+        spec: [
+          "Typescript",
+          "React.js",
+          "Next.js",
+          "react-query",
+          "tailwind css",
+          "openapi-typescript",
+        ],
+      },
+      {
+        title: "마켓 파트너센터",
+        description:
+          "캐시노트 마켓에 입점한 입점사가 상품 등록부터 주문 관리까지 관리할 수 있는 플랫폼",
+        link: "",
+        from: "2021.9",
+        to: "",
+        tasks: [
+          "프로젝트 설계부터 개발 및 배포까지 참여",
+          "상품 판촉비 관리, 쿠폰 관리와 같이 판촉을 위한 어드민 작업",
+          "상품 관리, 주문 관리, 배송 관리와 같이 상품 주문에 필요한 기능 작업",
+          "신규 주문수, 금액 사업장 등의 데이터를 볼 수 있는 대시브도 작업",
+        ],
+        spec: [
+          "Typescript",
+          "React.js",
+          "Next.js",
+          "react-query",
+          "tailwind css",
+          "openapi-typescript",
+          "antd",
+        ],
+      },
+      {
+        title: "한국신용데이터 홈페이지",
+        description:
+          "KCD 미션, 비전, 제품, 조직 문화, 채용 소식 등을 한 눈에 볼 수 있는 공간",
+        link: "https://www.kcd.co.kr",
+        from: "2022.6",
+        to: "",
+        tasks: [
+          "프로젝트 설계부터 개발 및 배포까지 참여",
+          "Headless CMS(confentful)를 이용하여 채용 정보, 최긴 뉴스, 보도 자료 관리",
+        ],
+        spec: ["Typescript", "React.js", "Next.js", "emotion", "contentful"],
+      },
+    ],
+  },
+  {
     corp: "퀄슨 (Qaulson)",
     position: "Frontend Developer",
     from: "2019.12",
@@ -164,6 +227,7 @@ export const EXPERIENCE = [
   },
 ];
 
+// 사이드 프로젝트 데이터는 `<SideProject />` 컴포넌트에 하드코딩
 export type SideProjectModel = typeof SIDE_PROJECT[number];
 export const SIDE_PROJECT = [
   {
