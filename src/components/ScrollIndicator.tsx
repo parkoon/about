@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  height: 7px;
+  height: 5px;
   z-index: 10;
   background: ${(props) => props.theme.colors.primary};
 `;

@@ -37,12 +37,17 @@ type Props = {
 function Contact({ items = [] }: Props) {
   return (
     <Wrapper>
-      {items.map(({ label, link }) => (
-        <Item>
-          <Label>{label}</Label>
-          <Link>{link}</Link>
-        </Item>
-      ))}
+      {items.map(({ label, link }) => {
+        const href = link.includes("@") ? `mailto:${link}` : link;
+        return (
+          <Item>
+            <Label>{label}</Label>
+            <Link target="_blank" href={href}>
+              {link}
+            </Link>
+          </Item>
+        );
+      })}
     </Wrapper>
   );
 }

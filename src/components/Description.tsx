@@ -23,7 +23,9 @@ const LinkTitle = styled.a`
   color: ${(props) => props.theme.colors.link};
 `;
 
-const Content = styled.div``;
+const Content = styled.div`
+  line-height: 1.4;
+`;
 
 type Props = {
   title: string;

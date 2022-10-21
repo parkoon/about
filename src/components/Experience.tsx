@@ -26,13 +26,14 @@ const Title = styled.h3`
 `;
 
 const LinkTitle = styled.a`
-  display: block;
+  display: inline-block;
   font-size: 32px;
   font-weight: 400;
 
   margin-bottom: 12px;
 
   color: ${(props) => props.theme.colors.link};
+  text-decoration: underline;
 `;
 
 const Left = styled.div`

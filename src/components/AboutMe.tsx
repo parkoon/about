@@ -1,3 +1,4 @@
+import { AboutMeModel } from "@/resume";
 import styled from "@emotion/styled";
 import React from "react";
 import List from "./List";
@@ -33,22 +34,19 @@ const BoxWrapper = styled.div`
   margin: 0 4px;
 `;
 
-type Props = {
-  title: string;
-  items: string[];
-};
-function AboutMe({ title, items }: Props) {
+type Props = AboutMeModel;
+function AboutMe({ prefix, suffix, items }: Props) {
   return (
     <Wrapper>
       <Header>
-        저는
+        저는 {prefix}
         <BoxWrapper>
           <Box />
           <Box />
           <Box />
           <Box />
         </BoxWrapper>
-        {title}
+        {suffix}
       </Header>
 
       <Body>

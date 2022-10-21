@@ -17,8 +17,8 @@ function App() {
   return (
     <Layout>
       <Profile name={PROFILE.name} link={PROFILE.link} />
-      {ABOUT_ME.map(({ title, items }, index) => (
-        <AboutMe key={index} title={title} items={items} />
+      {ABOUT_ME.map((item, index) => (
+        <AboutMe key={index} {...item} />
       ))}
       <Experience items={EXPERIENCE} />
       <SideProject items={SIDE_PROJECT} />
