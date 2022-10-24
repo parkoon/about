@@ -9,7 +9,7 @@ import { ABOUT_ME, EXPERIENCE, LAST_UPDATED_AT, PROFILE } from "./resume";
 function App() {
   return (
     <Layout>
-      <Profile name={PROFILE.name} link={PROFILE.link} />
+      <Profile {...PROFILE} />
       {ABOUT_ME.map((item, index) => (
         <AboutMe key={index} {...item} />
       ))}

@@ -1,6 +1,9 @@
 import styled from "@emotion/styled";
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 const Item = styled.span`
   &:not(:last-of-type)::after {

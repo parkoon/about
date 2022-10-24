@@ -1,12 +1,12 @@
 export type ProfileModel = typeof PROFILE;
 export const PROFILE = {
-  name: "박종혁 | Frontend Developer",
+  name: "박종혁",
   link: {
     github: "https://github.com/parkoon",
     email: "devparkoon@gmail.com",
   },
 };
-export const LAST_UPDATED_AT = "2019. 09. 17";
+export const LAST_UPDATED_AT = "2022. 10. 23";
 
 export type AboutMeModel = typeof ABOUT_ME[number];
 export const ABOUT_ME = [
@@ -14,7 +14,6 @@ export const ABOUT_ME = [
   //  1. -
   //  2. -
   {
-    prefix: "",
     suffix: "팀원이라는 피드백을 받고 있습니다.",
     items: [
       "생산성이 높은",
@@ -23,7 +22,6 @@ export const ABOUT_ME = [
     ],
   },
   {
-    prefix: "",
     suffix: "팀을 선호합니다.",
     items: [
       "의사결정이 빠른",

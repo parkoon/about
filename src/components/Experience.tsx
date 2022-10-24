@@ -21,6 +21,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h3`
+  position: relative;
   font-size: 32px;
   font-weight: 400;
 
@@ -51,7 +52,7 @@ const Left = styled.div`
 
   ${mq("small")} {
     margin-right: 0;
-    margin-bottom: 12px;
+    margin-bottom: 32px;
   }
 `;
 const Right = styled.div`
@@ -113,9 +114,6 @@ function Experience({ items }: Props) {
                   </Description>
                   <Description title="Spec Sheet">
                     <SpecSheet items={feature.spec} />
-                    {/* {feature.spec.map((label, index) => (
-                      <SpecTag key={index}>{label}</SpecTag>
-                    ))} */}
                   </Description>
                 </div>
                 {index < features.length - 1 && <Divider />}

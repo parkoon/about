@@ -1,12 +1,22 @@
 import styled from "@emotion/styled";
+import { mq } from "../styles/media-query";
 
 const Wrapper = styled.div`
   display: flex;
+
+  ${mq("small")} {
+    flex-direction: column;
+  }
 `;
 const Item = styled.div`
   position: relative;
   &:not(:last-child) {
     margin-right: 24px;
+
+    ${mq("small")} {
+      margin-right: 0;
+      margin-bottom: 7px;
+    }
   }
 
   &:not(:last-child)::after {
@@ -17,6 +27,10 @@ const Item = styled.div`
     height: 100%;
     width: 1px;
     background-color: rgba(0, 0, 0, 0.7);
+
+    ${mq("small")} {
+      display: none;
+    }
   }
 `;
 const Label = styled.span`

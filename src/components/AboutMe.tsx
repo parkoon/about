@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { AboutMeModel } from "../resume";
+import { mq } from "../styles/media-query";
 import List from "./List";
 
 const Wrapper = styled.div`
@@ -9,12 +10,14 @@ const Wrapper = styled.div`
 `;
 const Header = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 
   font-weight: 500;
   font-size: 17px;
 
   margin-bottom: 13px;
+  line-height: 1.4;
 `;
 
 const Body = styled.div``;
@@ -34,13 +37,12 @@ const BoxWrapper = styled.div`
 `;
 
 type Props = AboutMeModel;
-function AboutMe({ prefix, suffix, items }: Props) {
+function AboutMe({ suffix, items }: Props) {
   return (
     <Wrapper>
       <Header>
-        저는 {prefix}
+        저는
         <BoxWrapper>
-          <Box />
           <Box />
           <Box />
           <Box />
