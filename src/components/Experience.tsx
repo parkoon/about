@@ -5,6 +5,8 @@ import List from "./List";
 import { EXPERIENCE } from "@/resume";
 import Section from "./Section";
 import Description from "./Description";
+import SpecSheet from "./SpecSheet";
+import React from "react";
 
 const Wrapper = styled.div`
   display: flex;
@@ -91,8 +93,8 @@ function Experience({ items }: Props) {
           </Left>
           <Right>
             {features.map((feature, index) => (
-              <>
-                <div key={index}>
+              <React.Fragment key={index}>
+                <div>
                   {feature.link ? (
                     <LinkTitle target="_blank" href={feature.link}>
                       {feature.title}
@@ -110,13 +112,14 @@ function Experience({ items }: Props) {
                     <List items={feature.tasks} />
                   </Description>
                   <Description title="Spec Sheet">
-                    {feature.spec.map((label, index) => (
+                    <SpecSheet items={feature.spec} />
+                    {/* {feature.spec.map((label, index) => (
                       <SpecTag key={index}>{label}</SpecTag>
-                    ))}
+                    ))} */}
                   </Description>
                 </div>
                 {index < features.length - 1 && <Divider />}
-              </>
+              </React.Fragment>
             ))}
           </Right>
         </Wrapper>

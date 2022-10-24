@@ -37,10 +37,10 @@ type Props = {
 function Contact({ items = [] }: Props) {
   return (
     <Wrapper>
-      {items.map(({ label, link }) => {
+      {items.map(({ label, link }, index) => {
         const href = link.includes("@") ? `mailto:${link}` : link;
         return (
-          <Item>
+          <Item key={index}>
             <Label>{label}</Label>
             <Link target="_blank" href={href}>
               {link}
