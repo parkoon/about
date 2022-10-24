@@ -27,12 +27,11 @@ const Link = styled.a`
   color: ${(props) => props.theme.colors.link};
 `;
 
-type Item = {
-  label: string;
-  link: string;
-};
 type Props = {
-  items: Item[];
+  items: {
+    label: string;
+    link: string;
+  }[];
 };
 function Contact({ items = [] }: Props) {
   return (

@@ -1,6 +1,5 @@
-import { AboutMeModel } from "@/resume";
 import styled from "@emotion/styled";
-import React from "react";
+import { AboutMeModel } from "../resume";
 import List from "./List";
 
 const Wrapper = styled.div`

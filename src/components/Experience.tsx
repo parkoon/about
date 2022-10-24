@@ -1,12 +1,12 @@
-import { mq } from "@/styles/media-query";
 import styled from "@emotion/styled";
-import SpecTag from "./SpecTag";
 import List from "./List";
-import { EXPERIENCE } from "@/resume";
 import Section from "./Section";
 import Description from "./Description";
 import SpecSheet from "./SpecSheet";
 import React from "react";
+
+import { mq } from "../styles/media-query";
+import { EXPERIENCE } from "../resume";
 
 const Wrapper = styled.div`
   display: flex;

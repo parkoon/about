@@ -1,17 +1,10 @@
-import Experience from "@/components/Experience";
-import Layout from "@/components/Layout";
 import AboutMe from "./components/AboutMe";
+import Experience from "./components/Experience";
 import LastUpdatedAt from "./components/LastUpdatedAt";
-
-import {
-  ABOUT_ME,
-  EXPERIENCE,
-  LAST_UPDATED_AT,
-  PROFILE,
-  SIDE_PROJECT,
-} from "@/resume";
+import Layout from "./components/Layout";
 import Profile from "./components/Profile";
 import SideProject from "./components/SideProject";
+import { ABOUT_ME, EXPERIENCE, LAST_UPDATED_AT, PROFILE } from "./resume";
 
 function App() {
   return (

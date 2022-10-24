@@ -1,7 +1,4 @@
-import { SideProjectModel } from "@/resume";
 import styled from "@emotion/styled";
-import React from "react";
-import Description from "./Description";
 import List from "./List";
 import Section from "./Section";
 

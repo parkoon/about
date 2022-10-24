@@ -1,6 +1,4 @@
-import { ProfileModel } from "@/resume";
-import styled from "@emotion/styled";
-import React from "react";
+import { ProfileModel } from "../resume";
 import Contact from "./Contact";
 import Section from "./Section";
 
