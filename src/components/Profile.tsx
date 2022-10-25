@@ -9,6 +9,7 @@ function Profile({ name, link }: Props) {
       <Contact
         items={[
           { label: "GitHub", link: link.github },
+          { label: "LinkedIn", link: link.linkedIn },
           { label: "Email", link: link.email },
         ]}
       />

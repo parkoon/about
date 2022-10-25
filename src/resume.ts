@@ -3,6 +3,7 @@ export const PROFILE = {
   name: "박종혁",
   link: {
     github: "https://github.com/parkoon",
+    linkedIn: "https://www.linkedin.com/in/devparkoon",
     email: "devparkoon@gmail.com",
   },
 };
