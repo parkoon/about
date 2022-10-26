@@ -109,7 +109,7 @@ function Experience({ items }: Props) {
                   <Description title="Description">
                     {feature.description}
                   </Description>
-                  <Description title={`What id ${feature.to ? "did" : "do"}`}>
+                  <Description title={`What i ${feature.to ? "did" : "do"}`}>
                     <List items={feature.tasks} />
                   </Description>
                   <Description title="Spec Sheet">
