@@ -58,6 +58,38 @@ export const EXPERIENCE = [
           "tailwind css",
           "openapi-typescript",
         ],
+        lookBack: [
+          {
+            title: "무에서 유를 창조",
+            descriptions: [
+              "프론트엔드 2명이 레포 이름부터 시작해 기술 스펙 선택 및 구현, 배포까지 3개월이라는 짧다면 짧은 기간동안 빠른 배포를 위해 앞만 보고 달렸던거 같다.",
+            ],
+          },
+          {
+            title: "디자인을 받고",
+            descriptions: [
+              "디자인을 처음 받고, 바로 페이지 작업을 하는 것이 아닌 골방에서 컴포넌트 설계부터 시작했다. 작은 디자인 수정으로 공통 컴포넌트를 처리할 수 있는 경우에는 디자이너와 커뮤니케이션을 통해 디자인 의도를 파악하고 공통으로 처리했다.",
+              "인터렉션(e.g., 버튼 클릭, 장바구니 수량 변경 알림 등) 작업을 해보고 싶었지만, 우선순위에 밀려 못한 것이 아쉽다. 배포 이후에 다른 커머스 서비스를 참고하여 장바구니 담기 애니메이션, 장바구니 카운팅 애니메이션을 적용했다.",
+              "장바구니 페이지와 같이 SEO와 관련이 없고, 매번 자주 변하는 페이지로 캐싱이 어려운 경우 SPA 로 구성을 하고, 상품 목록 페이지와 같이 SEO와 FCP 를 고려해야 하는 경우 SSR을 캐싱(max-age, stale-while-revalidate)과 함께 사용했다.",
+              "화면 작업을 주로 담당하고 있어서, 배포 환경 구축(github action + docker + cloud front + ecs)을 제대로 경험해보지 못한게 아쉽다.",
+            ],
+          },
+          {
+            title: "개발 하면서",
+            descriptions: [
+              "react-query 와 openapi-typescript 조합은 신의 한 수 였던거 같다. react-query 를 사용하면 키 값을 어떻게 관리할지 고민을 많이 하게 되는데, openapi-typescript 로 생성된 url 을 키 값으로 사용하니 고민 하는 시간을 많이 줄일 수 있었다. 또한, query parameter 와 response body 모두 url 과 매칭해서 타이핑 해놓으니, swagger 를 참고해 모델을 만들고 만든 모델을 react-query 에 타이핑 하는 시간과 수고를 덜 수 있었다.",
+              "query parameter 와 response body 를 url 과 매칭하는데 생각보다 타이핑이 쉽지 않아서, ts-toolbelt 를 활용하여 좀 더 쉽게 원하는 타이핑을 할 수 있었다.",
+              "장바구니 데이터(e.g., 장바구니 수량)를 로컬 스토리지를 활용하지 않고 API 를 활용했기에, 데이터를 변경할 때마다 API 결과를 기다리고 화면을 업데이트해야 했다. 이 부분의 퍼포먼스를 개선하기 위해서 react-query 의 optimistic updates 를 활용했다.",
+            ],
+          },
+          {
+            title: "배포 이후에",
+            descriptions: [
+              "첫 배타 서비스 런칭이 있던 날, hotjar 를 통해 사용자가 어떠한 형태로 프로덕을 탐색하는지 팀원들과 같이 지켜보면서, ‘이건 이렇게 바꿔보면 어쩔지, 이건 어떻게 조정해보면 좋을지’에 대해서 얘기했던게 기억이 많이 남는다.",
+              "배포 이전에 챙기지 못했던 백엔드 작업, 정산 작업 등으로 클라이언트 작업량이 줄면서 시간이 뜨는 날이 많았다. 이 때 배포 일정에 신경쓰면저 챙기지 못했던 것들 (e.g., 리팩토링, 인터렉션, UI/UX)이나, 백엔드 도움 없이 프론트가 처리할 수 있는 일에 대해서 많은 고민(e.g., 최근 검색어 구현, 상품 디스플레이 형태 작업 등)을 했다.",
+            ],
+          },
+        ],
       },
       {
         title: "마켓 파트너센터",
@@ -80,6 +112,25 @@ export const EXPERIENCE = [
           "openapi-typescript",
           "antd",
         ],
+        lookBack: [
+          {
+            title: "V1 에서 V2로",
+            descriptions: [
+              "다중 입점사가 들어오기 전까지, 해당 서비스를 사용하는 사람은 회사 내부 사용자였고, 메인 서비스(캐시노트 마켓) 우선순위에 밀려 사용성에 대해서 시간을 많이 투자하지 못했다.",
+              "디자인도 전달받지 않은 상황에서 antd 에서 제공해주는 컴포넌트를 UX를 고려하지 않고 붙이기만 했다.",
+              "react-query를 openapi-generator와 같이 사용했다. openapi-generator는 openapi-typescript와 다르게 함수까지 모두 자동으로 생성해준다. 여기서 문제가 서버에서 API 스펙을 수정하면 함수명이 달라지는 상황이 생겼고, 이는 코드 문제까지 이어졌다. 그리고 함수를 커스터마이징 할 수 없던 것이 가장 불편했다.",
+              "V2로 가면서 V1의 코드를 모두 엎고 위 문제들을 해결했다. 코드를 엎고 새로 만들어 가는 과정에서 많은 성장을 할 수 있는 것 같다.",
+            ],
+          },
+          {
+            title: "UI/UX",
+            descriptions: [
+              "내부 운영 툴로만 사용한다면 디자인이 크게 상관이 없지만, 2022년 4분기에는 다중 입점사 대응 과제를 통해 다른 사장님들도 사용해야 하는 서비스가 되기 때문에 UI/UX가 중요해졌다.",
+              "디자인 인력 부족으로, 디자인을 받을 수 없는 상황에서 antd를 사용한 서비스를 참고해 디자인을 개선해 나갔다.",
+              "UX의 경우, 내가 사장님이 되어 실제 상황과 유사한 시나리오를 구성하고, 툴을 직접 사용해 보면서 불편한 점들을 개선하려고 했다. 또한 운영업무로 해당 툴을 미리 사용하고 있었던 팀원에게도 불편한 점들을 설문하고 개선해나갔다.",
+            ],
+          },
+        ],
       },
       {
         title: "한국신용데이터 홈페이지",
@@ -92,7 +143,25 @@ export const EXPERIENCE = [
           "홈, 회사소개, 서비스, 팀 문화, 인재영입, 새 소식 페이지 작업",
           "Headless CMS(confentful)를 이용하여 채용 정보, 최근 뉴스, 보도 자료 관리",
         ],
-        spec: ["Typescript", "React.js", "Next.js", "emotion", "contentful"],
+        spec: [
+          "Typescript",
+          "React.js",
+          "Next.js",
+          "emotion",
+          "contentful",
+          "vercel",
+        ],
+        lookBack: [
+          {
+            title: "나 홀로 한달 반",
+            descriptions: [
+              "기존에 있던 홈페이지에 대해서 알고 있는 사람이 아무도 없었고, 코드도 전혀 관리가 되고 있지 않았다. 브랜딩 TF 팀이 구성이 되고 디자인이 나왔지만 내부에 개발자 부족해 외주 업체를 맡겨야 하는 상황이 었다. 우리 회사의 홈페이지를 외부에 맡기는 것도 그렇고, 사이드 프로젝트를 하고 싶었던 참에 홈페이지 개발에 참여하게 되었다.",
+              "Headless CMS를 처음 다뤄 봤는데, 서버 구성 없이 데이터를 다룰 수 있다는 점이 굉장히 매력적이었다. 다른 서비스에도 특정 유저를 타겟팅 하고 있는 데이터가 아니고 백엔드 인력이 부족한 상황에서 Headless CMS를 사용해도 좋을 것 같다.",
+              "인재영입 페이지, 새 소식 페이지의 경우 데이터 변화가 잦을 수 있기 때문에 ISR로 구성했다.",
+              "회사 연혁과 같이 데이터 변화가 많지 않은 경우에는 SSG로 구성하고, 데이터 변화가 있는 경우 다시 빌드 및 배포가 이뤄질 수 있도록 contentful에 vercel deploy webhook을 구성했다.",
+            ],
+          },
+        ],
       },
     ],
   },
@@ -123,6 +192,7 @@ export const EXPERIENCE = [
           "Styled-component",
           "Redux",
         ],
+        lookBack: [],
       },
       {
         title: "21세기 영어",
@@ -137,6 +207,7 @@ export const EXPERIENCE = [
           "자녀 관리 페이지를 Webview 로 구현하여 앱에서 자녀의 정보를 관리할 수 있는 환경 제공",
         ],
         spec: ["TypeScript", "React.js", "Next.js", "Styled-component"],
+        lookBack: [],
       },
       {
         title: "Qualson Bridge Serer",
@@ -152,6 +223,7 @@ export const EXPERIENCE = [
           "21세기 영어 및 리얼클래스 2.0 소셜 로그인 서버 구축",
         ],
         spec: ["Node.js", "Express.js"],
+        lookBack: [],
       },
     ],
   },
@@ -181,6 +253,7 @@ export const EXPERIENCE = [
           "Node.js",
           "Socket.io",
         ],
+        lookBack: [],
       },
       {
         title: "Knowledge Talk",
@@ -207,6 +280,7 @@ export const EXPERIENCE = [
           "Redux",
           "Antd",
         ],
+        lookBack: [],
       },
       {
         title: "LG Smart TV Software Collaboration",
@@ -221,6 +295,7 @@ export const EXPERIENCE = [
           "webOS의 AI & Roll Control API 기반으로 OLED TV 데모 앱 개발",
         ],
         spec: ["WebOS", "HTML/CSS", "Javascript", "Enact.js"],
+        lookBack: [],
       },
     ],
   },
@@ -238,5 +313,12 @@ export const SIDE_PROJECT = [
     title: "ㅁㄴㄹㄴㅁㄹㄴㅁㅇㄹ",
     link: "213123.com",
     descriptions: ["123123123", "123123123"],
+  },
+];
+
+export const LOOK_BACK = [
+  {
+    title: "asdasdas",
+    descriptions: [`${(<code>zzz</code>)}aaaaa`],
   },
 ];

@@ -7,6 +7,7 @@ import React from "react";
 
 import { mq } from "../styles/media-query";
 import { EXPERIENCE } from "../resume";
+import LookBack from "./LookBack";
 
 const Wrapper = styled.div`
   display: flex;
@@ -115,6 +116,10 @@ function Experience({ items }: Props) {
                   <Description title="Spec Sheet">
                     <SpecSheet items={feature.spec} />
                   </Description>
+
+                  {feature.lookBack.length > 0 && (
+                    <LookBack item={feature.lookBack} />
+                  )}
                 </div>
                 {index < features.length - 1 && <Divider />}
               </React.Fragment>
