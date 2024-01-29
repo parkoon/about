@@ -12,9 +12,10 @@ function SideProject() {
     <Section title="Side Project" mt={87}>
       <List
         items={[
+          <>PFP NFT와 음악 디제잉을 결합한 소셜 플랫폼 PFP Play</>,
           <>
             아이폰 지갑앱을 밴치마킹 하여 제작한{" "}
-            <Link target="_blank" href="https://www.junebride.kr/">
+            <Link target="_blank" href="https://junebride.vercel.app/">
               모바일 청첩장
             </Link>
           </>,

@@ -27,6 +27,8 @@ const Title = styled.h3`
   font-weight: 400;
 
   margin-bottom: 12px;
+  white-space: pre-line;
+  line-height: 110%;
 `;
 const FeatureTitle = styled.h4`
   font-size: 28px;
@@ -79,7 +81,7 @@ const Divider = styled.div`
 `;
 
 type Props = {
-  items: typeof EXPERIENCE[number][];
+  items: (typeof EXPERIENCE)[number][];
 };
 function Experience({ items }: Props) {
   return (

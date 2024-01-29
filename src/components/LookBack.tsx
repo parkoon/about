@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { EXPERIENCE } from "../resume";
 import List from "./List";
 
@@ -33,10 +33,19 @@ const Body = styled.div<{ more: boolean }>`
 `;
 
 type Props = {
-  item: typeof EXPERIENCE[number]["features"][number]["lookBack"];
+  item: (typeof EXPERIENCE)[number]["features"][number]["lookBack"];
 };
 function LookBack({ item }: Props) {
-  const [more, setMore] = useState(true);
+  const [more, setMore] = useState(false);
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const openParam = urlParams.get("open");
+
+    if (openParam) {
+      setMore(true);
+    }
+  }, []);
   return (
     <>
       <Header>

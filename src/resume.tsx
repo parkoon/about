@@ -7,9 +7,9 @@ export const PROFILE = {
     email: "devparkoon@gmail.com",
   },
 };
-export const LAST_UPDATED_AT = "2022. 10. 23";
+export const LAST_UPDATED_AT = "2024. 01. 29";
 
-export type AboutMeModel = typeof ABOUT_ME[number];
+export type AboutMeModel = (typeof ABOUT_ME)[number];
 export const ABOUT_ME = [
   // 저는 OOOO 하다는 평가를 받고 있습니다.
   //  1. -
@@ -19,7 +19,7 @@ export const ABOUT_ME = [
     items: [
       "생산성이 높은",
       "팀의 분위기를 밝게 만드는",
-      "사용자 관점에서 서비스를 구현하는",
+      "고객 가치를 최우선으로 생각하는",
     ],
   },
   {
@@ -34,10 +34,133 @@ export const ABOUT_ME = [
 
 export const EXPERIENCE = [
   {
+    corp: "엔터프라이즈\n블록체인",
+    position: "Frontend Developer",
+    from: "2023.2",
+    to: "",
+    features: [
+      {
+        title: "JOOB",
+        description: "인도네시아 향 소상공인 구인구직 서비스",
+        link: "https://grab.joob.id",
+        from: "2023.12",
+        to: "",
+        tasks: [
+          "잡 탐색부터 매칭까지 일거리 매칭에 필요한 전반적인 기능 작업",
+          "openapi-typescript 를 활용한 isomorphic fetch 라이브러리 구현",
+        ],
+        spec: [
+          "Typescript",
+          "React.js",
+          "Next.js",
+          "Zustand",
+          "react-query",
+          "tailwind css",
+          "openapi-typescript",
+        ],
+        lookBack: [
+          {
+            title: "DX 개선 노력",
+            descriptions: [
+              "스웨거에서 제공해주는 JSON을 기반으로 생성된 타입을 fetch에 타이핑 함으로써, 한 쪽에 스웨거를 켜놓는 일이 없어졌다.",
+              "페이지가 많아 질수록, 페이지 구조를 파악하기 힘들어지고, 어디로 라우팅해야 하는지 또는 path 에 대한 오탈자 이슈가 많았다. Next.js에서 제공하는 app 폴더 구조를 타이핑하고 그 타입을 감싼 컴포넌트와 훅을 만들어 이 문제를 해결 할 수 있었다.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Data ID Wallet",
+        description:
+          "블록체인을 활용하여 경력과 개인의 일거리 수행 경험을 기록하는 Data ID 글로벌 서비스",
+        link: "https://data.id",
+        from: "2023.09",
+        to: "2023.12 (서비스 일시 중단)",
+        tasks: [
+          "Next.js App router 도입 및 프로젝트 기반 작업",
+          "엑셀 기반 다국어 파일 생성 자동화",
+          "RSC / RCC 에서 사용할 수 있는 cookie 기반 다국어 라이브러리 개발",
+          "재사용성이 높은 공용컴포넌트 부터 서비스 로직이 포함된 컴포넌트를 분리하여 설계",
+        ],
+        spec: [
+          "Typescript",
+          "React.js",
+          "Next.js",
+          "Zustand",
+          "react-query",
+          "tailwind css",
+          "openapi-typescript",
+        ],
+        lookBack: [
+          {
+            title: "App Router 도입",
+            descriptions: [
+              "프로젝트를 세팅할 때 App Router가 나온지 얼마 안됐지만, Pages Router를 사용하는건 레거시로 생각에 App Router로 프로젝트 기반 작업을 시작했다.",
+              "axios를 사용할 수 없다는 단점이 있었지만, router group, loading/error/layout 과 같이 관심사를 분리하고 서비스 로직에 집중할 수 있는 환경, app 디렉토리 내 _components 와 같은 폴더 구조를 허용하면서 colocation 방향 제시 등이 매력적이었다.",
+              "물론, next/image 사용시 OOM 이슈, scroll restoration 이슈 등이 있었지만 App Router의 커뮤니티는 작지 않았고, 이슈 탭에서 충분히 해결책을 찾을 수 있는 정도였다.",
+            ],
+          },
+          {
+            title: "다국어 처리",
+            descriptions: [
+              "대부분의 다국어 처리 라이브러리는 path 기반으로 동작한다. Data ID Wallet은 첫 path를 핸들러라 명칭했고, 그 핸들러를 사용자별로 가져갈 수 있었기에 path 기반의 다국어 처리는 어려운 상황이었다.",
+              "이러한 이유로 cookie 기반으로 다국어를 처리할 수 있는 라이브러리가 필요했다. 다국어 처리의 핵심은 설정된 언어를 기준으로 파일을 읽고, 번역 키 값을 이용해 텍스트를 가져오는 정도라 라이브러리를 직접 만드는데 큰 어려운음 없었다. 텍스트 내부에 변수 처리를 정규 표현식으로 처리해야 하는 부분이 조금 까다로웠지만 검색을 통해서 충분히 해결할 수 있는 정도였다.",
+              "언어가 설정되어 있지 않은 경우, next middleware 에서 기본 언어 쿠키에 세팅해주고 redirect를 해주고 있었는데 쿠키를 가져갈 수 없는 환경에서는 무한 redirect가 발생했다. (실제로, 웹 크롤러가 og image 처리를 위해 페이지에 접근했을 떄 문제가 발생했다.) ",
+              "위 문제를 해결하기 위해, middleware에서 redirect가 아닌, next response 에 쿠키를 세팅해 줘야 했다. 이 방법은 다른 문제를 발생시켰는데, middleware에서 설정한 쿠키를 next/headers 에서 제공해주는 cookies를 이용해 바로 가져다 쓸 수 없었고, 새로고침을 해야 그 값을 가져올 수 있었다.",
+              "next/headers의 cookies는 요청 헤더에 접근을 하고 있고, 나는 middleware에서 응답 헤더에 값을 넣어주고 있었다. 응답 헤더에 있는 쿠키를 요청 헤더에 오버라이딩 하는 작업이 필요했고, 이를 통해 문제를 해결 할 수 있었다.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "요긱",
+        description: "긱 워커 및 N잡러를 위한 일거리 매칭 서비스",
+        link: "",
+        from: "2023.02",
+        to: "2023.09 (서비스 종료)",
+        tasks: [
+          "채용부터 계약 및 출퇴근 관리를 아우르는 파트너 전용 플랫폼 개발",
+          "파트너사 별 계약서 템플릿 및 서명 모듈 구축",
+          "cheerio 및 pdfkit을 활용한 PDF 변환 모듈 구축",
+          "쿠폰 발급 등 판촉을 위한 이벤트 페이지 작업",
+        ],
+        spec: [
+          "Typescript",
+          "React.js",
+          "Next.js",
+          "Antd",
+          "react-query",
+          "tailwind css",
+          "openapi-typescript",
+        ],
+        lookBack: [
+          {
+            title: "일을 좀 더 효율적으로",
+            descriptions: [
+              '입사하고 업무를 받기 전, 파트너 전용 플랫폼(이하 PWS)을 PoC 하는 과정에 있고, "결과물이 너무 늦게 나오는거 같아요" 라는 말을 PM을 통해 들었다.',
+              "PWS는 일반 사용자를 대상으로 하는 서비스가 아닌, 데이터를 다뤄야 하는 입점사를 대상으로 하고 있었다. 그럼에도 퍼블리싱 작업부터 너무 많은 시간을 투자하고 있었기에 결과물이 늦을 수 밖에 없었다.",
+              "위와 같은 상황에서는 최소한의 디자인으로 사용성에만 문제가 없으면 된다고 생각했기에 UI 라이브러리를 커스터마이징해서 사용하는 것을 제안했다. 디자인 인력 또한 PWS가 아닌 메인 서비스(요긱)에 투입하는 것을 제안했다.",
+              "제안이 반영되면서, 유저 플로우에 대해서만 기획자와 논의하고 UI/UX는 역으로 디자이너에게 컨펌을 받는 방식으로 업무를 진행했다.",
+              "이를 통해 인력 리소스를 효율적으로 사용할 수 있었고, 작업 속도 역시 확연히 빨라졌다.",
+            ],
+          },
+          {
+            title: "PDF를 좀 더 현실적으로",
+            descriptions: [
+              "브라우저단에서 캔버스를 이용해 html을 이미지로 변환하고 그것을 pdf로 변환하면 쉽게 웹 페이지를 pdf로 변환할 수 있었지만, 파일 암호 설정과 같은 기능을 이용하기 위해서는 단순히 브라우저에서 파일을 생성하는 것이 아닌 서버단에서 처리가 필요했다.",
+              "Node 환겨에서 puppeteer 라이브러리를 이용하면 페이지를 스크래핑해서 pdf를 변환할 수 있었지만, 서명 시점에서 서비스 입점사의 도장 이미지를 삽입해야 하는 요구사항이 있어 puppeteer를 사용할 수 없었다.",
+              "대안으로, pdfkit 라이브러리를 선택했고 pdfkit은 우리가 생각하는 pdf를 그대로 만들 수 있었지만, html을 cheerio를 이용해서 분석하고 각 태그를 pdfkit으로 정의한 스타일에 매칭시켜야 하는 번거로움이 있었다. 또한 html depth를 재귀를 통해 처리하는 것도 쉬운일이 아니었다.",
+              "모든 html tag에 대해서 pdfkit에 맞게 변환하는 작업을 했었더라면, 가치 있는 오픈 라이브러리가 탄생할 수 있었지만, 계약서에 들어가는 약속된 태그에 대해서만 작업을 해놓은게 조금 아쉽다.",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
     corp: "한국신용데이터",
     position: "Frontend Developer",
     from: "2021.6",
-    to: "",
+    to: "2023.2",
     features: [
       {
         title: "캐시노트 마켓",
@@ -106,10 +229,10 @@ export const EXPERIENCE = [
           "Typescript",
           "React.js",
           "Next.js",
+          "Antd",
           "react-query",
           "tailwind css",
           "openapi-typescript",
-          "antd",
         ],
         lookBack: [
           {
@@ -303,7 +426,7 @@ export const EXPERIENCE = [
 ];
 
 // 사이드 프로젝트 데이터는 `<SideProject />` 컴포넌트에 하드코딩
-export type SideProjectModel = typeof SIDE_PROJECT[number];
+export type SideProjectModel = (typeof SIDE_PROJECT)[number];
 export const SIDE_PROJECT = [
   {
     title: "6월의 신부를 위하나 청첩장",
