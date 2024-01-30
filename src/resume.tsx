@@ -166,7 +166,7 @@ export const EXPERIENCE = [
         description: "소상공인에게 상품을 공급하는 플랫폼",
         link: "",
         from: "2021.9",
-        to: "",
+        to: "2023.2",
         tasks: [
           "상품 탐색부터 장바구니, 결제까지의 커머스에 필요한 기능 작업",
           "쿠폰 룰렛과 같은 판촉을 위한 이벤트 페이지 작업",
@@ -218,7 +218,7 @@ export const EXPERIENCE = [
           "캐시노트 마켓에 입점한 입점사가 상품을 등록하고, 주문을 관리할 수 있는 플랫폼",
         link: "https://vendors.kcd.co.kr/v2",
         from: "2021.9",
-        to: "",
+        to: "2023.2",
         tasks: [
           "상품 판촉비 관리, 쿠폰 관리와 같이 판촉을 위한 어드민 작업",
           "상품 관리, 주문 관리, 배송 관리와 같이 상품 주문에 필요한 기능 작업",
@@ -261,7 +261,7 @@ export const EXPERIENCE = [
           "KCD 미션, 비전, 제품, 조직 문화, 채용 소식 등을 한 눈에 볼 수 있는 공간",
         link: "https://www.kcd.co.kr",
         from: "2022.6",
-        to: "",
+        to: "2023.2",
         tasks: [
           "홈, 회사소개, 서비스, 팀 문화, 인재영입, 새 소식 페이지 작업",
           "Headless CMS(confentful)를 이용하여 채용 정보, 최근 뉴스, 보도 자료 관리",
