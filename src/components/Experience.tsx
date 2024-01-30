@@ -8,6 +8,7 @@ import React from "react";
 import { mq } from "../styles/media-query";
 import { EXPERIENCE } from "../resume";
 import LookBack from "./LookBack";
+import { Link } from "./SideProject";
 
 const Wrapper = styled.div`
   display: flex;
@@ -113,7 +114,62 @@ function Experience({ items }: Props) {
                     {feature.description}
                   </Description>
                   <Description title={`What i ${feature.to ? "did" : "do"}`}>
-                    <List items={feature.tasks} />
+                    <List
+                      items={feature.tasks.map((task) => {
+                        if (typeof task === "string") {
+                          return <>{task}</>;
+                        }
+
+                        return (
+                          <Link target="_blank" href={task.link}>
+                            {task.title}
+                          </Link>
+                        );
+                      })}
+                    />
+                    {/* <List
+                      items={[
+                        <>
+                          PFP NFT와 음악 디제잉을 결합한 소셜 플랫폼 PFP Play
+                        </>,
+                        <>
+                          아이폰 지갑앱을 밴치마킹 하여 제작한{" "}
+                          <Link
+                            target="_blank"
+                            href="https://junebride.vercel.app/"
+                          >
+                            모바일 청첩장
+                          </Link>
+                        </>,
+                        <>
+                          이력서를 쉽게 만들고 github pages에 배포할 수 있게
+                          도와주는{" "}
+                          <Link
+                            target="_blank"
+                            href="https://github.com/parkoon/resume-kit"
+                          >
+                            플랫폼
+                          </Link>
+                        </>,
+                        <>
+                          네이버에서 구현한{" "}
+                          <Link
+                            target="_blank"
+                            href="https://github.com/naver/passport-naver"
+                          >
+                            passport-naver
+                          </Link>{" "}
+                          의 문제점(e.g., 프로필 데이터 누락)을 해결하기 위해
+                          제작한{" "}
+                          <Link
+                            target="_blank"
+                            href="https://www.npmjs.com/package/passport-naver-v2"
+                          >
+                            모듈
+                          </Link>
+                        </>,
+                      ]}
+                    /> */}
                   </Description>
                   <Description title="Spec Sheet">
                     <SpecSheet items={feature.spec} />

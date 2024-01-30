@@ -47,7 +47,14 @@ export const EXPERIENCE = [
         to: "",
         tasks: [
           "잡 탐색부터 매칭까지 일거리 매칭에 필요한 전반적인 기능 작업",
-          "openapi-typescript 를 활용한 isomorphic fetch 라이브러리 구현",
+          {
+            title: "openapi-typescript 를 활용한 fetch 라이브러리 구현",
+            link: "https://medium.com/@devparkoon/%EB%8D%94-%EC%9D%B4%EC%83%81-%EC%8A%A4%EC%9B%A8%EA%B1%B0-%EB%B3%B4%EA%B3%A0-%ED%83%80%EC%9E%85%EC%9D%84-%ED%83%80%EC%9D%B4%ED%95%91%ED%95%98%EC%A7%80-%EC%95%8A%EA%B8%B0-feat-openapi-typescript-0229a0581109",
+          },
+          {
+            title: "페이지 라우팅 효율화",
+            link: "https://medium.com/@devparkoon/dx-%EA%B0%9C%EC%84%A0-%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%9D%BC%EC%9A%B0%ED%8C%85-%ED%9A%A8%EC%9C%A8%ED%99%94-919c3e8e19fd",
+          },
         ],
         spec: [
           "Typescript",
@@ -58,15 +65,7 @@ export const EXPERIENCE = [
           "tailwind css",
           "openapi-typescript",
         ],
-        lookBack: [
-          {
-            title: "DX 개선 노력",
-            descriptions: [
-              "스웨거에서 제공해주는 JSON을 기반으로 생성된 타입을 fetch에 타이핑 함으로써, 한 쪽에 스웨거를 켜놓는 일이 없어졌다.",
-              "페이지가 많아 질수록, 페이지 구조를 파악하기 힘들어지고, 어디로 라우팅해야 하는지 또는 path 에 대한 오탈자 이슈가 많았다. Next.js에서 제공하는 app 폴더 구조를 타이핑하고 그 타입을 감싼 컴포넌트와 훅을 만들어 이 문제를 해결 할 수 있었다.",
-            ],
-          },
-        ],
+        lookBack: [],
       },
       {
         title: "Data ID Wallet",

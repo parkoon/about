@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import List from "./List";
 import Section from "./Section";
 
-const Link = styled.a`
+export const Link = styled.a`
   color: ${(props) => props.theme.colors.link};
   text-decoration: underline;
 `;
