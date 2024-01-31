@@ -52,7 +52,7 @@ export const EXPERIENCE = [
             link: "https://medium.com/@devparkoon/%EB%8D%94-%EC%9D%B4%EC%83%81-%EC%8A%A4%EC%9B%A8%EA%B1%B0-%EB%B3%B4%EA%B3%A0-%ED%83%80%EC%9E%85%EC%9D%84-%ED%83%80%EC%9D%B4%ED%95%91%ED%95%98%EC%A7%80-%EC%95%8A%EA%B8%B0-feat-openapi-typescript-0229a0581109",
           },
           {
-            title: "페이지 라우팅 효율화",
+            title: "type-safe한 페이지 라우팅",
             link: "https://medium.com/@devparkoon/dx-%EA%B0%9C%EC%84%A0-%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%9D%BC%EC%9A%B0%ED%8C%85-%ED%9A%A8%EC%9C%A8%ED%99%94-919c3e8e19fd",
           },
         ],
