@@ -36,7 +36,7 @@ export const EXPERIENCE = [
   {
     corp: "엔터프라이즈\n블록체인",
     position: "Frontend Developer",
-    from: "2023.2",
+    from: "2023.02",
     to: "",
     features: [
       {
@@ -158,8 +158,8 @@ export const EXPERIENCE = [
   {
     corp: "한국신용데이터",
     position: "Frontend Developer",
-    from: "2021.6",
-    to: "2023.2",
+    from: "2021.06",
+    to: "2023.02",
     features: [
       {
         title: "캐시노트 마켓",
@@ -217,8 +217,8 @@ export const EXPERIENCE = [
         description:
           "캐시노트 마켓에 입점한 입점사가 상품을 등록하고, 주문을 관리할 수 있는 플랫폼",
         link: "https://vendors.kcd.co.kr/v2",
-        from: "2021.9",
-        to: "2023.2",
+        from: "2021.09",
+        to: "2023.02",
         tasks: [
           "상품 판촉비 관리, 쿠폰 관리와 같이 판촉을 위한 어드민 작업",
           "상품 관리, 주문 관리, 배송 관리와 같이 상품 주문에 필요한 기능 작업",
@@ -260,8 +260,8 @@ export const EXPERIENCE = [
         description:
           "KCD 미션, 비전, 제품, 조직 문화, 채용 소식 등을 한 눈에 볼 수 있는 공간",
         link: "https://www.kcd.co.kr",
-        from: "2022.6",
-        to: "2023.2",
+        from: "2022.06",
+        to: "2023.02",
         tasks: [
           "홈, 회사소개, 서비스, 팀 문화, 인재영입, 새 소식 페이지 작업",
           "Headless CMS(confentful)를 이용하여 채용 정보, 최근 뉴스, 보도 자료 관리",
@@ -333,7 +333,7 @@ export const EXPERIENCE = [
         lookBack: [],
       },
       {
-        title: "Qualson Bridge Serer",
+        title: "Qualson Bridge Server",
         link: "",
         from: "2020.03",
         to: "2021.05",
