@@ -12,7 +12,12 @@ function SideProject() {
     <Section title="Side Project" mt={87}>
       <List
         items={[
-          <>PFP NFT와 음악 디제잉을 결합한 소셜 플랫폼 PFP Play</>,
+          <>
+            <Link target="_blank" href="https://parkoon.github.io/koond/">
+              Headless UI를 활용해 모바일 웹 환경에 최적화, 재활용 가능한
+              컴포넌트 제작
+            </Link>
+          </>,
           <>
             아이폰 지갑앱을 밴치마킹 하여 제작한{" "}
             <Link target="_blank" href="https://junebride.vercel.app/">
