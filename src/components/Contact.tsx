@@ -1,46 +1,3 @@
-import styled from "@emotion/styled";
-import { mq } from "../styles/media-query";
-
-const Wrapper = styled.div`
-  display: flex;
-
-  ${mq("small")} {
-    flex-direction: column;
-  }
-`;
-const Item = styled.div`
-  position: relative;
-  &:not(:last-child) {
-    margin-right: 24px;
-
-    ${mq("small")} {
-      margin-right: 0;
-      margin-bottom: 7px;
-    }
-  }
-
-  &:not(:last-child)::after {
-    position: absolute;
-    bottom: 0;
-    right: -12px;
-    content: "";
-    height: 100%;
-    width: 1px;
-    background-color: rgba(0, 0, 0, 0.7);
-
-    ${mq("small")} {
-      display: none;
-    }
-  }
-`;
-const Label = styled.span`
-  font-weight: 500;
-  margin-right: 7px;
-`;
-const Link = styled.a`
-  color: ${(props) => props.theme.colors.link};
-`;
-
 type Props = {
   items: {
     label: string;
@@ -49,19 +6,27 @@ type Props = {
 };
 function Contact({ items = [] }: Props) {
   return (
-    <Wrapper>
+    <div className="flex max-sm:flex-col">
       {items.map(({ label, link }, index) => {
         const href = link.includes("@") ? `mailto:${link}` : link;
+        const isLast = index === items.length - 1;
         return (
-          <Item key={index}>
-            <Label>{label}</Label>
-            <Link target="_blank" href={href}>
+          <div
+            key={index}
+            className={`relative ${!isLast ? "mr-6 max-sm:mr-0 max-sm:mb-[7px]" : ""} ${!isLast ? "after:content-[''] after:absolute after:bottom-0 after:-right-3 after:h-full after:w-px after:bg-black/70 max-sm:after:hidden" : ""}`}
+          >
+            <span className="font-medium mr-[7px]">{label}</span>
+            <a
+              target="_blank"
+              href={href}
+              className="text-[var(--color-link)]"
+            >
               {link}
-            </Link>
-          </Item>
+            </a>
+          </div>
         );
       })}
-    </Wrapper>
+    </div>
   );
 }
 

@@ -1,14 +1,4 @@
-import styled from "@emotion/styled";
 import React, { useEffect, useState } from "react";
-
-const Wrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 5px;
-  z-index: 10;
-  background: ${(props) => props.theme.colors.primary};
-`;
 
 function ScrollIndicator() {
   const [scrolled, setScrolled] = useState(0);
@@ -28,7 +18,12 @@ function ScrollIndicator() {
 
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  return <Wrapper style={{ width: `${scrolled}%` }} />;
+  return (
+    <div
+      className="fixed top-0 left-0 h-[5px] z-10 bg-[var(--color-primary)]"
+      style={{ width: `${scrolled}%` }}
+    />
+  );
 }
 
 export default ScrollIndicator;

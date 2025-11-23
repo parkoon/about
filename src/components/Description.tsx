@@ -1,31 +1,4 @@
-import styled from "@emotion/styled";
 import React from "react";
-
-const Wrapper = styled.div`
-  &:not(:last-of-type) {
-    margin-bottom: 18px;
-  }
-`;
-
-const Title = styled.h4`
-  font-weight: 400;
-  font-size: 20px;
-
-  margin-bottom: 10px;
-`;
-const LinkTitle = styled.a`
-  display: block;
-  font-weight: 400;
-  font-size: 20px;
-
-  margin-bottom: 10px;
-
-  color: ${(props) => props.theme.colors.link};
-`;
-
-const Content = styled.div`
-  line-height: 1.4;
-`;
 
 type Props = {
   title: string;
@@ -34,17 +7,21 @@ type Props = {
 };
 function Description({ title, link, children }: Props) {
   return (
-    <Wrapper>
+    <div className="mb-[18px] last:mb-0">
       {link ? (
-        <LinkTitle target="_blank" href={link}>
+        <a
+          target="_blank"
+          href={link}
+          className="block font-normal text-xl mb-2.5 text-[var(--color-link)]"
+        >
           {title}
-        </LinkTitle>
+        </a>
       ) : (
-        <Title>{title}</Title>
+        <h4 className="font-normal text-xl mb-2.5">{title}</h4>
       )}
 
-      <Content>{children}</Content>
-    </Wrapper>
+      <div className="leading-[1.4]">{children}</div>
+    </div>
   );
 }
 

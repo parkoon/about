@@ -1,29 +1,21 @@
-import styled from "@emotion/styled";
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-const Item = styled.span`
-  &:not(:last-of-type)::after {
-    content: "|";
-    padding: 0 7px;
-    font-size: 0.9em;
-    color: rgba(0, 0, 0, 0.7);
-  }
-`;
-
 type Props = {
   items: string[];
 };
 function SpecSheet({ items }: Props) {
   return (
-    <Wrapper>
-      {items.map((item) => (
-        <Item key={item}>{item}</Item>
-      ))}
-    </Wrapper>
+    <div className="flex flex-wrap">
+      {items.map((item, index) => {
+        const isLast = index === items.length - 1;
+        return (
+          <span
+            key={item}
+            className={!isLast ? "after:content-['|'] after:px-[7px] after:text-[0.9em] after:text-black/70" : ""}
+          >
+            {item}
+          </span>
+        );
+      })}
+    </div>
   );
 }
 

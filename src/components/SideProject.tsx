@@ -1,11 +1,17 @@
-import styled from "@emotion/styled";
 import List from "./List";
 import Section from "./Section";
 
-export const Link = styled.a`
-  color: ${(props) => props.theme.colors.link};
-  text-decoration: underline;
-`;
+export const Link = ({
+  children,
+  ...props
+}: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
+  <a
+    {...props}
+    className="text-[var(--color-link)] underline"
+  >
+    {children}
+  </a>
+);
 
 function SideProject() {
   return (
