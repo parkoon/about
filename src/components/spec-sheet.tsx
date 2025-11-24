@@ -1,7 +1,7 @@
 type Props = {
   items: string[];
 };
-function SpecSheet({ items }: Props) {
+export const SpecSheet = ({ items }: Props) => {
   return (
     <div className="flex flex-wrap">
       {items.map((item, index) => {
@@ -9,7 +9,11 @@ function SpecSheet({ items }: Props) {
         return (
           <span
             key={item}
-            className={!isLast ? "after:content-['|'] after:px-[7px] after:text-[0.9em] after:text-black/70" : ""}
+            className={
+              !isLast
+                ? "after:content-['|'] after:px-[7px] after:text-[0.9em] after:text-black/70"
+                : ""
+            }
           >
             {item}
           </span>
@@ -17,6 +21,4 @@ function SpecSheet({ items }: Props) {
       })}
     </div>
   );
-}
-
-export default SpecSheet;
+};

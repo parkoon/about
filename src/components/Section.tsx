@@ -7,17 +7,16 @@ type Props = {
   mb?: number;
   mt?: number;
 };
-function Section({ title, children, mt, mb, style }: Props) {
+export const Section = ({ title, children, mt, mb, style }: Props) => {
   return (
     <section style={{ marginTop: mt, marginBottom: mb, ...style }}>
       {title && (
-        <h3 className="inline-block relative text-[38px] font-semibold mb-6 after:content-[''] after:absolute after:-right-[17px] after:bottom-0 after:w-3 after:h-3 after:rounded-full after:bg-[var(--color-primary)]">
-          {title}
-        </h3>
+        <header className="flex items-end mb-6">
+          <h3 className="inline-block text-4xl font-semibold">{title}</h3>
+          <div className="w-2 h-2 rounded-full bg-primary mb-1 ml-1.5" />
+        </header>
       )}
       <article>{children}</article>
     </section>
   );
-}
-
-export default Section;
+};

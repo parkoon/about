@@ -1,21 +1,20 @@
-import AboutMe from "./components/AboutMe";
-import Experience from "./components/Experience";
-import LastUpdatedAt from "./components/LastUpdatedAt";
-import Layout from "./components/Layout";
-import Profile from "./components/Profile";
-import SideProject from "./components/SideProject";
-import { ABOUT_ME, EXPERIENCE, LAST_UPDATED_AT, PROFILE } from "./resume";
+import { AboutMe } from "./components/about-me";
+import { LastUpdatedAt } from "./components/last-updated-at";
+import { Layout } from "./components/layout";
+import { OpenSourceProject } from "./components/open-source-project";
+import { PersonalProject } from "./components/personal-project";
+import { Profile } from "./components/profile";
+import { WorkExperience } from "./components/work-experience";
 
 function App() {
   return (
     <Layout>
-      <Profile {...PROFILE} />
-      {ABOUT_ME.map((item, index) => (
-        <AboutMe key={index} {...item} />
-      ))}
-      <Experience items={EXPERIENCE} />
-      <SideProject />
-      <LastUpdatedAt at={LAST_UPDATED_AT} />
+      <Profile />d
+      <AboutMe />
+      <WorkExperience />
+      <OpenSourceProject />
+      <PersonalProject />
+      <LastUpdatedAt />
     </Layout>
   );
 }

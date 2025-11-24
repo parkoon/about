@@ -1,20 +1,37 @@
-import { ProfileModel } from "../resume";
-import Contact from "./Contact";
-import Section from "./Section";
+import { PROFILE } from "../data";
+import { Section } from "./section";
 
-type Props = ProfileModel;
-function Profile({ name, link }: Props) {
+const ITEMS = [
+  { label: "GitHub", link: PROFILE.link.github },
+  { label: "LinkedIn", link: PROFILE.link.linkedIn },
+  { label: "Email", link: PROFILE.link.email },
+];
+export const Profile = () => {
   return (
-    <Section title={name} mb={32}>
-      <Contact
-        items={[
-          { label: "GitHub", link: link.github },
-          { label: "LinkedIn", link: link.linkedIn },
-          { label: "Email", link: link.email },
-        ]}
-      />
+    <Section title={PROFILE.name} mb={32}>
+      <div className="flex max-sm:flex-col">
+        {ITEMS.map(({ label, link }, index) => {
+          const href = link.includes("@") ? `mailto:${link}` : link;
+          const isLast = index === ITEMS.length - 1;
+          return (
+            <div
+              key={index}
+              className={`relative ${
+                !isLast ? "mr-6 max-sm:mr-0 max-sm:mb-[7px]" : ""
+              } ${
+                !isLast
+                  ? "after:content-[''] after:absolute after:bottom-0 after:-right-3 after:h-full after:w-px after:bg-black/70 max-sm:after:hidden"
+                  : ""
+              }`}
+            >
+              <span className="font-medium mr-[7px]">{label}</span>
+              <a target="_blank" href={href} className="text-link">
+                {link}
+              </a>
+            </div>
+          );
+        })}
+      </div>
     </Section>
   );
-}
-
-export default Profile;
+};

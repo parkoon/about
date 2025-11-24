@@ -5,7 +5,7 @@ type Props = {
   link?: string;
   children: React.ReactNode;
 };
-function Description({ title, link, children }: Props) {
+export const Description = ({ title, link, children }: Props) => {
   return (
     <div className="mb-[18px] last:mb-0">
       {link ? (
@@ -23,6 +23,4 @@ function Description({ title, link, children }: Props) {
       <div className="leading-[1.4]">{children}</div>
     </div>
   );
-}
-
-export default Description;
+};

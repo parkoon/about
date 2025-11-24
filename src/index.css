@@ -2,7 +2,7 @@
 
 @theme {
   --color-primary: #475569;
-  --color-link: #0984e3;
+  --color-link: #64748b;
   
   --font-family-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
@@ -26,11 +26,7 @@ button {
   padding: 0;
 }
 
-a {
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-}
+
 
 /* 모바일 환경에서 생기는 하이라이트 제거 */
 input,
