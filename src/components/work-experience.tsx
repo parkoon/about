@@ -9,6 +9,21 @@ import { calculateDuration } from "../utils/calculate-duration";
 import { Description } from "./description";
 import { Link } from "./link";
 
+type TaskItem = string | { title: string; link: string };
+
+const renderTaskItems = (tasks: TaskItem[]) => {
+  return tasks.map((task, index) => {
+    if (typeof task === "string") {
+      return <React.Fragment key={index}>{task}</React.Fragment>;
+    }
+    return (
+      <Link key={index} target="_blank" href={task.link}>
+        {task.title}
+      </Link>
+    );
+  });
+};
+
 export const WorkExperience = () => {
   return (
     <Section title="Experience" mt={87}>
@@ -23,7 +38,7 @@ export const WorkExperience = () => {
                     {corp}
                   </h3>
 
-                  {about && (
+                  {about.length > 0 && (
                     <ul className="text-black/60 mb-3">
                       {about.map((item, index) => (
                         <li key={index}>{item}</li>
@@ -64,32 +79,12 @@ export const WorkExperience = () => {
 
                           <Description title="핵심 기여">
                             <List
-                              items={feature.achievements.map((task) => {
-                                if (typeof task === "string") {
-                                  return <>{task}</>;
-                                }
-
-                                return (
-                                  <Link target="_blank" href={task.link}>
-                                    {task.title}
-                                  </Link>
-                                );
-                              })}
+                              items={renderTaskItems(feature.achievements)}
                             />
                           </Description>
                           <Description title="주요 성과">
                             <List
-                              items={feature.contributions.map((task) => {
-                                if (typeof task === "string") {
-                                  return <>{task}</>;
-                                }
-
-                                return (
-                                  <Link target="_blank" href={task.link}>
-                                    {task.title}
-                                  </Link>
-                                );
-                              })}
+                              items={renderTaskItems(feature.contributions)}
                             />
                           </Description>
                         </div>

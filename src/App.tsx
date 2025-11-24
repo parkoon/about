@@ -9,7 +9,7 @@ import { WorkExperience } from "./components/work-experience";
 function App() {
   return (
     <Layout>
-      <Profile />d
+      <Profile />
       <AboutMe />
       <WorkExperience />
       <OpenSourceProject />
