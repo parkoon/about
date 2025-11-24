@@ -28,3 +28,4 @@ export const LinkList = ({ links }: Props) => {
     </div>
   );
 };
+
