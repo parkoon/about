@@ -405,7 +405,7 @@ export const PERSONAL_PROJECT: PersonalProject[] = [
     ],
     feature: {
       title: "애플 지갑 앱 UI/UX를 벤치마킹한 모바일 최적화 청첩장",
-      descriptions: [],
+      descriptions: ["Framer motion 사용하여 인터랙티브 애니메이션 구현"],
     },
   },
   {
