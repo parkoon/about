@@ -1,26 +1,3 @@
-type Spec =
-  | "React.js"
-  | "Typescript"
-  | "Tailwind CSS"
-  | "React "
-  | "Next.js"
-  | "Antd"
-  | "emotion"
-  | "contentful"
-  | "vercel"
-  | "Node.js"
-  | "Express.js"
-  | "Redis"
-  | "PM2"
-  | "WebRTC"
-  | "HTML/CSS"
-  | "Javascript"
-  | "Enact.js"
-  | "react-query"
-  | "WebOS"
-  | "Supabase"
-  | "framer-motion";
-
 export type ProfileModel = typeof PROFILE;
 export const PROFILE = {
   name: "일을 작게 나누고 빠르게 실행하는, FE 박종혁",
