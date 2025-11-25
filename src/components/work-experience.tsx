@@ -25,7 +25,7 @@ export const WorkExperience = () => {
               key={index}
               left={
                 <>
-                  <h3 className="relative text-[32px] font-normal mb-3 whitespace-pre-line leading-[110%]">
+                  <h3 className="relative text-[32px] font-normal mb-3 whitespace-pre-line leading-[110%] break-keep">
                     {corp}
                   </h3>
 
