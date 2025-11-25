@@ -43,12 +43,13 @@ export const EXPERIENCE: WorkExperience[] = [
   {
     corp: "자비스앤빌런즈 (삼쩜삼)",
     about: [
-      "세금 환급 1위 플랫폼, 누적 사용자 2,000만+",
+      "세금 환급 1위 플랫폼",
+      "누적 사용자 2,000만+",
       "리워드/혜택 플랫폼 운영",
     ],
     position: "Frontend Developer",
-    from: "2023.02",
-    to: "2024.07",
+    from: "2024.09",
+    to: "",
     features: [
       {
         title: "리워드 플랫폼 구축 및 운영",
@@ -186,7 +187,7 @@ export const EXPERIENCE: WorkExperience[] = [
     corp: "한국신용데이터",
     position: "Frontend Developer",
     about: [
-      `Series C 핀테크 유니콘, 기업가치 1조원`,
+      `Series C 핀테크 유니콘`,
       `소상공인 금융·경영 플랫폼 '캐시노트' 운영`,
     ],
     from: "2021.06",
@@ -278,7 +279,7 @@ export const EXPERIENCE: WorkExperience[] = [
     ],
   },
   {
-    corp: "퀄슨 (Qaulson)",
+    corp: "퀄슨",
     about: [
       "에듀테크 스타트업",
       "리얼클래스, 21세기영어 등 영어 교육 서비스 운영",
