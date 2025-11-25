@@ -1,4 +1,5 @@
 import { PERSONAL_PROJECT } from "../data";
+import { parseBold } from "../utils/parse-bold";
 import { LinkList } from "./link-list";
 import { List } from "./list";
 import { Section } from "./section";
@@ -31,7 +32,7 @@ export const PersonalProject = () => {
                 <List
                   items={project.feature.descriptions.map(
                     (description, index) => (
-                      <p key={index}>{description}</p>
+                      <p key={index}>{parseBold(description)}</p>
                     )
                   )}
                 />

@@ -5,7 +5,7 @@ import { Section } from "./section";
 export const AboutMe = () => {
   return (
     <Section title="About">
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-3">
         {ABOUT_ME.map((item, index) => (
           <p key={index}>{parseBold(item)}</p>
         ))}

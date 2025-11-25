@@ -1,4 +1,5 @@
 import { PROFILE } from "../data";
+import { Link } from "./link";
 import { Section } from "./section";
 
 const ITEMS = [
@@ -8,7 +9,7 @@ const ITEMS = [
 ];
 export const Profile = () => {
   return (
-    <Section title={PROFILE.name} mb={32}>
+    <Section title={PROFILE.name} mb={52}>
       <div className="flex max-sm:flex-col">
         {ITEMS.map(({ label, link }, index) => {
           const href = link.includes("@") ? `mailto:${link}` : link;
@@ -25,9 +26,7 @@ export const Profile = () => {
               }`}
             >
               <span className="font-medium mr-[7px]">{label}</span>
-              <a target="_blank" href={href} className="text-link">
-                {link}
-              </a>
+              <Link href={href}>{link}</Link>
             </div>
           );
         })}

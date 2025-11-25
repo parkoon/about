@@ -1,4 +1,5 @@
 import { OPEN_SOURCE_PROJECT } from "../data";
+import { parseBold } from "../utils/parse-bold";
 import { LinkList } from "./link-list";
 import { List } from "./list";
 import { Section } from "./section";
@@ -6,7 +7,7 @@ import { TwoColumnWrapper } from "./two-column-wrapper";
 
 export const OpenSourceProject = () => {
   return (
-    <Section title="Open Source Project" mt={87}>
+    <Section title="Open Source" mt={87}>
       <div className="flex flex-col gap-[62px]">
         {OPEN_SOURCE_PROJECT.map((project) => (
           <TwoColumnWrapper
@@ -27,7 +28,7 @@ export const OpenSourceProject = () => {
                 <List
                   items={project.feature.descriptions.map(
                     (description, index) => (
-                      <p key={index}>{description}</p>
+                      <p key={index}>{parseBold(description)}</p>
                     )
                   )}
                 />

@@ -7,21 +7,12 @@ import { TwoColumnWrapper } from "./two-column-wrapper";
 import { EXPERIENCE } from "../data";
 import { calculateDuration } from "../utils/calculate-duration";
 import { Description } from "./description";
-import { Link } from "./link";
+import { parseBold } from "../utils/parse-bold";
 
-type TaskItem = string | { title: string; link: string };
-
-const renderTaskItems = (tasks: TaskItem[]) => {
-  return tasks.map((task, index) => {
-    if (typeof task === "string") {
-      return <React.Fragment key={index}>{task}</React.Fragment>;
-    }
-    return (
-      <Link key={index} target="_blank" href={task.link}>
-        {task.title}
-      </Link>
-    );
-  });
+const renderTaskItems = (tasks: string[]) => {
+  return tasks.map((task, index) => (
+    <React.Fragment key={index}>{parseBold(task)}</React.Fragment>
+  ));
 };
 
 export const WorkExperience = () => {
@@ -39,7 +30,7 @@ export const WorkExperience = () => {
                   </h3>
 
                   {about.length > 0 && (
-                    <ul className="text-black/60 mb-3">
+                    <ul className="text-black/60 mb-3 break-keep">
                       {about.map((item, index) => (
                         <li key={index}>{item}</li>
                       ))}
